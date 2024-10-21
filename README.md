@@ -34,5 +34,5 @@
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your_username/financial_backtester.git
+git clone https://github.com/STEPHENSAPPOR/financial_backtester.git
 cd financial_backtester
