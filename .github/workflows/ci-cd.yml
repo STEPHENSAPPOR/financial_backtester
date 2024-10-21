@@ -1,0 +1,23 @@
+name: Docker CI/CD
+
+on:
+  push:
+    branches:
+      - main  # Change this to your branch name if needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "DevOpsSappor" --password-stdin
+
+      - name: Build Docker image
+        run: docker build . -t devopssappor/financial_backtester:latest
+
+      - name: Push Docker image
+        run: docker push devopssappor/financial_backtester:latest
+
