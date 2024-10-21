@@ -1,0 +1,10 @@
+Django>=3.2,<4.0
+djangorestframework
+psycopg2-binary  # If you are using PostgreSQL
+numpy
+pandas
+matplotlib
+requests  # Added for making HTTP requests
+reportlab  # Added for generating PDF reports
+# Add any other dependencies your project uses
+

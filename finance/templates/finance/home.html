@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backtesting Tool</title>
+</head>
+<body>
+    <h1>Welcome to the Finance App</h1>
+    <h2>Run Backtest</h2>
+    <form method="post" action="{% url 'run_backtest' %}">
+        {% csrf_token %}
+        <label for="symbol">Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required><br><br>
+
+        <label for="initial_investment">Initial Investment ($):</label>
+        <input type="number" id="initial_investment" name="initial_investment" required><br><br>
+
+        <label for="short_ma">Short Moving Average (days):</label>
+        <input type="number" id="short_ma" name="short_ma" value="50" required><br><br>
+
+        <label for="long_ma">Long Moving Average (days):</label>
+        <input type="number" id="long_ma" name="long_ma" value="200" required><br><br>
+
+        <input type="submit" value="Run Backtest">
+    </form>
+</body>
+</html>
+
